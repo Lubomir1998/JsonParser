@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".ui.DetailActivity2">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:id="@+id/imgView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/titleTextView"
+        android:layout_marginTop="30dp"
+        tools:text="Title"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         tools:text="Location: "
+         android:layout_below="@id/titleTextView"
+         android:textSize="30sp"
+         android:id="@+id/zz"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="35dp"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        tools:text="lon - 00.00  lat - 00.00"
+        android:layout_below="@id/zz"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adressText"
+        android:textSize="20sp"
+        android:layout_below="@id/location"
+        tools:text="Address: smnueibuibuivnr"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/descriptionLocation"
+        android:layout_below="@id/adressText"
+        android:textSize="20sp"
+        tools:text="jnbiubreuibbiurbvuiebveuibvuiwebv"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shedules"
+        android:layout_below="@id/descriptionLocation"
+        android:textSize="18sp"
+        tools:text="1rwwddf"
+        android:layout_marginTop="30dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/circleView"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/shedules"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/circleView"
+        android:textSize="17sp"
+        android:id="@+id/typeTextView"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/desc"
+        android:layout_below="@id/typeTextView"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

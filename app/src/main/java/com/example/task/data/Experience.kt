@@ -10,7 +10,7 @@ import com.example.task.models.Location
 data class Experience(
 
     @PrimaryKey
-    val id: String,
+    var id: String,
 
     val title: String,
 

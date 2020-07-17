@@ -1,7 +1,6 @@
 package com.example.task.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -84,12 +83,13 @@ class FragmentMain : Fragment() {
             binding.progressbar.visibility = View.GONE
 
             it.printStackTrace()
-            if(it.localizedMessage == "Unable to resolve host \"a1ea1343-8fcb-408e-ba56-395933b2e4c8.mock.pstmn.io\": No address associated with hostname") {
-                Toast.makeText(activity, "No connection", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_SHORT).show()
+//            if(it.localizedMessage == "Unable to resolve host \"a1ea1343-8fcb-408e-ba56-395933b2e4c8.mock.pstmn.io\": No address associated with hostname") {
+//                Toast.makeText(activity, "No connection", Toast.LENGTH_SHORT).show()
+//            }
+//            else {
+//                Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_SHORT).show()
+//            }
         })
 
 

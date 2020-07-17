@@ -41,6 +41,7 @@ class DetailViewModel: ViewModel() {
                     repository.update(detailExperience)
                     loadFromDB(id)
 
+
                   //  experienceInDetail.value = detailExperience
                 }
             }catch (e: Throwable){

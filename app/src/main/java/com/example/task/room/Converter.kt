@@ -19,10 +19,10 @@ class Converter {
     fun fromList(l: MutableList<String>): String{
         var string = ""
         for(s in l){
-            string += "$s "
+            string += "$s,"
         }
 
-        return string
+    return string.substring(0, string.length-1)
     }
 
     @TypeConverter
@@ -30,11 +30,13 @@ class Converter {
 
         val mList: MutableList<String> = mutableListOf()
 
-        for(string in s.trim().split(" ")){
+        for(string in s.split(",")){
 
 //            if(string.isNotEmpty()) {
 //                mList.add(string)
 //            }
+
+
             mList.add(string)
         }
 

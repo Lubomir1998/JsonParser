@@ -1,31 +1,29 @@
 package com.example.task.data
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.task.models.Image
+import com.example.task.models.Location
 
-
+@Entity
 data class Experience(
+
+    @PrimaryKey
+    val id: String,
 
     val title: String,
 
-    val id: String,
+    val description: String? = null,
 
-    val description: String,
+    @Embedded
+    val coverImage: Image,
 
-    @SerializedName("coverImage")
-    @Expose
-    val imgUrl: Original,
-
-    @SerializedName("nextSchedules")
-    @Expose
-    val date: List<String>,
+    val nextSchedules: List<String>,
 
     val type: String,
 
-    @SerializedName("location")
-    @Expose
-    val loc: LocationData
+    @Embedded
+    val location: Location
 
-
-) {
-}
+)

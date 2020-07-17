@@ -1,13 +1,14 @@
 package com.example.task.data
 
-import retrofit2.Call
+import com.example.task.models.ResultExp
+import com.example.task.models.ResultObj
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
 
     @GET("v1/users/favorites/experiences/")
-    fun getDataFromApi(): Call<ResultObj>
+    suspend fun getDataFromApi(): ResultObj
 
 
     @GET("v1/experiences/{id}")

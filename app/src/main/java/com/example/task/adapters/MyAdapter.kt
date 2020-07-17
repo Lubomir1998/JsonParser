@@ -1,26 +1,21 @@
-package com.example.task
+package com.example.task.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.task.R
 import com.example.task.data.Experience
 import com.squareup.picasso.Picasso
-import org.joda.time.DateTime
-import java.lang.Exception
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.ZoneId
 import java.util.*
 
-class MyAdapter(private val context: Context, private var list: List<Experience>, var listener: OnItemClickListener) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val context: Context, var list: List<Experience>, var listener: OnItemClickListener) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -35,9 +30,9 @@ class MyAdapter(private val context: Context, private var list: List<Experience>
         val current = list[position]
 
         holder.titleTextView.text = current.title
-        Picasso.with(context).load(current.imgUrl.original).into(holder.image)
+        Picasso.with(context).load(current.coverImage.original).into(holder.image)
 
-        current.date.first().let {
+        current.nextSchedules.first().let {
 //            val year = it.substring(0, 4)
 //            val month = it.substring(5, 7)
 //            val day = it.substring(8, 10)
@@ -52,7 +47,7 @@ class MyAdapter(private val context: Context, private var list: List<Experience>
             val date = parser.parse(it)
 
             val formatter = SimpleDateFormat("HH:mm, dd.MM.yyyy", Locale.getDefault())
-//            formatter.timeZone = TimeZone.getDefault()
+
             val newDate = formatter.format(date)
 
             holder.date.text = newDate
@@ -68,7 +63,7 @@ class MyAdapter(private val context: Context, private var list: List<Experience>
 
         }
         else{
-//            holder.circle.setBackgroundColor(Color.parseColor("#1A7DD6"))
+    //        holder.circle.setBackgroundColor(Color.parseColor("#1A7DD6"))
 
             holder.circle.setImageResource(R.drawable.blue_circle)
         }
@@ -86,7 +81,7 @@ class MyAdapter(private val context: Context, private var list: List<Experience>
         val date = itemView.findViewById<TextView>(R.id.dateTextView)
         val circle = itemView.findViewById<ImageView>(R.id.circleType)
 
-        fun bind(ex:Experience, listener: OnItemClickListener){
+        fun bind(ex: Experience, listener: OnItemClickListener){
             itemView.setOnClickListener {
                 listener.onItemClicked(ex)
             }

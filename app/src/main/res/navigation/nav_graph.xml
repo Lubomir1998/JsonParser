@@ -22,5 +22,8 @@
         <argument
             android:name="experienceID"
             app:argType="string" />
+        <argument
+            android:name="titleArg"
+            app:argType="string" />
     </fragment>
 </navigation>

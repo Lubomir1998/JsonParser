@@ -27,6 +27,11 @@ class FragmentMain : Fragment() {
     private val model: MainViewModel by viewModels()
 
 
+    override fun onResume() {
+        super.onResume()
+
+        (activity as MainActivity).supportActionBar?.title = "Task"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,8 +59,9 @@ class FragmentMain : Fragment() {
 
 
                 val experienceStringId: String = exp.id
+                val experienceTitle: String = exp.title
 
-                val action = FragmentMainDirections.actionFragmentMainToFragmentDetail(experienceStringId)
+                val action = FragmentMainDirections.actionFragmentMainToFragmentDetail(experienceStringId, experienceTitle)
 
                 view.findNavController().navigate(action)
 

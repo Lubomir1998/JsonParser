@@ -98,6 +98,14 @@ class FragmentMain : Fragment() {
 
         model.updateFromAPI()
 
+        binding.swipeRefresh.setOnRefreshListener {
+            binding.progressbar.visibility = View.GONE
+            binding.layout.visibility = View.VISIBLE
+            model.loadFromDB()
+
+            model.updateFromAPI()
+            binding.swipeRefresh.isRefreshing = false
+        }
 
 
     }

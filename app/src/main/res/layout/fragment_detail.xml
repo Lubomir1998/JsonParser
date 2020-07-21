@@ -12,6 +12,13 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/progressBar" />
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshDetail">
+
+
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -128,5 +135,6 @@
             </RelativeLayout>
 
         </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

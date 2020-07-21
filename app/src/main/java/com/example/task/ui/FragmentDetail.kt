@@ -57,6 +57,19 @@ class FragmentDetail : Fragment() {
 
         viewModel.repository = Repository(DbHelper.getDbInstance(requireContext())!!)
 
+        val experienceID = args.experienceID
+        viewModel.loadFromDB(experienceID)
+        viewModel.updateFromAPI(experienceID)
+
+        binding.swipeRefreshDetail.setOnRefreshListener {
+            binding.progressBar.visibility = View.GONE
+            binding.scrollView.visibility = View.VISIBLE
+            viewModel.loadFromDB(experienceID)
+            viewModel.updateFromAPI(experienceID)
+            binding.swipeRefreshDetail.isRefreshing = false
+
+        }
+
         viewModel.experienceInDetail.observe(requireActivity(), Observer {
             binding.progressBar.visibility = View.GONE
             binding.scrollView.visibility = View.VISIBLE
@@ -129,9 +142,7 @@ class FragmentDetail : Fragment() {
         })
 
 
-        val experienceID = args.experienceID
-        viewModel.loadFromDB(experienceID)
-        viewModel.updateFromAPI(experienceID)
+
 
 
     }

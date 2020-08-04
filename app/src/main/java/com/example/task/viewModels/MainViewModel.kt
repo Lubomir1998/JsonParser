@@ -19,13 +19,10 @@ class MainViewModel: ViewModel() {
     fun loadFromDB() {
 
          viewModelScope.launch {
-
-             val value = repository.getAllFromDB()
              experiences.value = repository.getAllFromDB()
          }
 
     }
-
 
 
     fun updateFromAPI() {
@@ -47,7 +44,6 @@ class MainViewModel: ViewModel() {
 
                     loadFromDB()
                 }
-
 
             } catch (e: Throwable) {
 
